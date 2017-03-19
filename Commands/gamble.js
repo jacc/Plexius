@@ -12,7 +12,7 @@ module.exports = class gamble {
         // console.log(allowed)
         setTimeout(() => {
             allowed[message.author.id] = true;
-        }, 60000);
+        }, 3600000);
         this.client.events.log(`${message.author.id} is now allowed to bet.`, `db`)
         let arg = args.split(" ")
         if (arg[0] == 'flip') {
@@ -20,7 +20,7 @@ module.exports = class gamble {
                 let data = await this.client.data.load()
                 //message.channel.send(`Soon:tm:`)
                 if (data.users[message.author.id].bits < arg[2]) return message.channel.sendMessage(`You do not have enough bits!`)
-                if (allowed[message.author.id] == false) return message.channel.sendMessage("**Please allow 1 minute in between bets.**")
+                if (allowed[message.author.id] == false) return message.channel.sendMessage("**Please allow 1 hour in between bets.**")
                 if (arg[2].includes('-')) return message.channel.sendMessage(`No negative numbers!`)
                 message.channel.sendMessage(`${message.author} has bet ${arg[2]} <:bit:292703565217136640> on heads!`).then(m => {
                     let chance = Math.random()
