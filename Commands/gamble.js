@@ -46,8 +46,8 @@ module.exports = class gamble {
             if (arg[1] == 'tails') {
                 let data = await this.client.data.load()
                 //message.channel.send(`Soon:tm:`)
-
                 if (data.users[message.author.id].bits < arg[2]) return message.channel.sendMessage(`You do not have enough bits!`)
+                if (allowed[message.author.id] == false) return message.channel.sendMessage("**Please allow 1 hour in between bets.**")
                 message.channel.sendMessage(`${message.author} has bet ${arg[2]} <:bit:292703565217136640> on tails!`).then(m => {
                     let chance = Math.random()
 
