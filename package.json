@@ -1,0 +1,15 @@
+{
+  "name": "plexius",
+  "version": "1.0.0",
+  "description": "Plexius",
+  "main": "plexius.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "discord.js": "^11.0.0"
+  }
+}
