@@ -7,7 +7,7 @@ module.exports = class Rank {
     }
 
     async run(message, args) {
-        if (!args){message.channel.sendMessage(":x: Please check the usage! :x:");}
+        if (!args){message.channel.sendMessage(":x: Please check the usage! :x:");
         var arg = args.split(" ").slice(1)
         let queen = message.guild.roles.find("name", "Queen");
         let trash = message.guild.roles.find("name", "Trash");
@@ -33,5 +33,5 @@ module.exports = class Rank {
            }
            message.channel.sendMessge(":white_check_mark: Added/removed " + arg[0] + " :white_check_mark:");
         }
-    }
+   
 }
