@@ -21,7 +21,10 @@ module.exports = class gamble {
                 //message.channel.send(`Soon:tm:`)
                 if (data.users[message.author.id].bits < arg[2]) return message.channel.sendMessage(`You do not have enough bits!`)
                 if (allowed[message.author.id] == false) return message.channel.sendMessage("**Please allow 1 hour in between bets.**")
+                if (!arg[2]) return message.channel.sendMessage(`Please include the amount of bits you want to bet!`)
+                if (arg[2].includes('.')) return message.channel.sendMessage(`No decimals!`)
                 if (arg[2].includes('-')) return message.channel.sendMessage(`No negative numbers!`)
+                if (arg[3]) return message.channel.sendMessage("Please format your bet correctly!\n`?gamble flip <heads / tails> <# of bits>`")
                 message.channel.sendMessage(`${message.author} has bet ${arg[2]} <:bit:292703565217136640> on heads!`).then(m => {
                     let chance = Math.random()
 
@@ -48,6 +51,11 @@ module.exports = class gamble {
                 //message.channel.send(`Soon:tm:`)
                 if (data.users[message.author.id].bits < arg[2]) return message.channel.sendMessage(`You do not have enough bits!`)
                 if (allowed[message.author.id] == false) return message.channel.sendMessage("**Please allow 1 hour in between bets.**")
+                if (!arg[2]) return message.channel.sendMessage(`Please include the amount of bits you want to bet!`)
+                if (arg[2].includes('-')) return message.channel.sendMessage(`No negative numbers!`)
+                if (arg[2].includes('.')) return message.channel.sendMessage(`No decimals!`)
+
+                if (arg[3]) return message.channel.sendMessage("Please format your bet correctly!\n`?gamble flip <heads / tails> <# of bits>`")
                 message.channel.sendMessage(`${message.author} has bet ${arg[2]} <:bit:292703565217136640> on tails!`).then(m => {
                     let chance = Math.random()
 
