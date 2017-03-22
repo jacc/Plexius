@@ -7,13 +7,11 @@ module.exports = class Rank {
     }
 
     async run(message, args) {
+        if (!args){message.channel.sendMessage(":x: Please check the usage! :x:");}
         var arg = args.split(" ").slice(1)
         let queen = message.guild.roles.find("name", "Queen");
         let trash = message.guild.roles.find("name", "Trash");
         let noob = message.guild.roles.find("name", "Noob");
-        if (!arg[0]){
-           message.channel.sendMessage(":x: Please check the usage! :x:");
-        } else {
            if (arg[0].toLowerCase() == "queen"){
              if (message.member.hasRole(queen.id)){
                 message.member.removeRole(queen.id);
