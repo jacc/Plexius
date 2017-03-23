@@ -31,6 +31,6 @@ module.exports = class Rank {
                 message.member.addRole(noob.id);
              }
            }
-           message.channel.sendMessge(":white_check_mark: Added/removed " + arg[0] + " :white_check_mark:");
+           message.channel.sendMessage(":white_check_mark: Added/removed " + arg[0] + " :white_check_mark:");
     }
 }
