@@ -15,7 +15,7 @@ module.exports = class GitHub {
             message.channel.sendMessage(`:ok_hand: **Pulling from git...**`);
 
             const p = require('child_process');
-            p.exec(`cd ${process.cwd()}\ngit pull https://github.com/jaacks/plexius.git`, function(err, stdout, stderror) {
+            p.exec(`cd ${process.cwd()}\ngit pull`, function(err, stdout, stderror) {
                 if (err) return message.channel.sendMessage(`**Update Error**: ${err}`);
 
                 message.channel.sendMessage("`STDOUT`\n```\n" + stdout == '' ? 'Nothing.' : stdout + "\n```\n\n`STDERROR`\n```\n" + stderror == '' ? 'Nothing.' : stderror + "\n```").then(m => {
