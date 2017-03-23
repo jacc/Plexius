@@ -30,8 +30,7 @@ module.exports = class Rank {
              } else {
                 message.member.addRole(noob.id);
              }
-           }
            message.channel.sendMessge(":white_check_mark: Added/removed " + arg[0] + " :white_check_mark:");
-        }
-   
+        
+    }
 }
