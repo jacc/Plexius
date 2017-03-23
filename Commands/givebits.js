@@ -13,6 +13,7 @@ module.exports = class givebits {
         let mem = message.guild.member(message.mentions.users.first())
         if (arg[0].includes('-')) return message.channel.sendMessage(`No negative numbers!`)
         if (arg[0].includes('.')) return message.channel.sendMessage(`No decimals!`)
+        if (isNaN(arg[0])) return message.channel.sendMessage(`What do you think you're doing? :/`);
         if (arg[1]) return message.channel.sendMessage(`Please format like this: \`?givebits @user <bit amount>\``)
         if(data.users[message.author.id].bits < arg[0]) return message.channel.sendMessage(`**You do not have enough bits!**`)
         data.users[message.author.id].bits -= parseInt(arg[0])
