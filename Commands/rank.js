@@ -7,35 +7,28 @@ module.exports = class Rank {
     }
 
     async run(message, args) {
-        if (!args){return message.channel.sendMessage(":x: Please check the usage! (current roles: Queen, Trash, Noob, God) :x:");}
+        if (!args){message.channel.sendMessage(":x: Please check the usage! :x:");}
         var arg = args.split(" ");
         let queen = message.guild.roles.find("name", "Queen");
         let trash = message.guild.roles.find("name", "Trash");
         let noob = message.guild.roles.find("name", "Noob");
-        let god = message.guild.roles.find("name", "God");
-           if (arg[0].toLowerCase() == "queen"){
+           if (arg[0]=="queen"){
              if (message.member.roles.has(queen.id)){
                 message.member.removeRole(queen.id);
              } else {
                 message.member.addRole(queen.id);
              }
-           } else if (arg[0].toLowerCase() == "trash"){
+           } else if (arg[0]=="trash"){
              if (message.member.roles.has(trash.id)){
                 message.member.removeRole(trash.id);
              } else {
                 message.member.addRole(trash.id);
              }
-           } else if (arg[0].toLowerCase() == "noob"){
+           } else if (arg[0]=="noob"){
              if (message.member.roles.has(noob.id)){
                 message.member.removeRole(noob.id);
              } else {
                 message.member.addRole(noob.id);
-             }
-           } else if (arg[0].toLowerCase() == "god"){
-             if (message.member.roles.has(god.id)){
-                message.member.removeRole(god.id);
-             } else {
-                message.member.addRole(god.id);
              }
            } else {
                return message.channel.sendMessage(":x: That role isn't valid :( :x:");
